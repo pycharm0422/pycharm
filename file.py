@@ -1,0 +1,1 @@
+print("faraz khan is a good boy ")
