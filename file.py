@@ -27,5 +27,5 @@ print(f"I have {len(my_pets)} dogs:")
 my_dogs = Pets(my_pets)
 
 for dog in my_dogs.dogs:
-
+    print()
 
