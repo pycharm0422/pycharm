@@ -1,6 +1,3 @@
 n = int(input("enter the number: "))
-while(n>4):
+for i in range(n):
     print("How are you git hub")
-
-
-
