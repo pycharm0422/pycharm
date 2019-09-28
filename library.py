@@ -15,6 +15,7 @@ class Library:
             print("Book is available ")
             self.lended_book.update({book:user})
             print("Database is updated ")
+            self.book.remove(book)
         else:
             print("Enter the book present in library : ")
 
@@ -63,3 +64,4 @@ if __name__ == "__main__":
             quit()
         if m == 'c':
             continue
+
