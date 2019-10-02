@@ -37,4 +37,5 @@ if __name__ == "__main__":
         print("Enter 1 or 2 only ")
     result = turn_100(m)
     print(result)
+    print()
 
