@@ -17,6 +17,7 @@ class Library:
             else:
                 print("Book is available ")
                 self.lended_book.update({book:user})
+                # print(self.lended_book)
                 print("Database is updated ")
                 self.book.remove(book)
         else:
