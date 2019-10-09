@@ -175,7 +175,7 @@ if __name__ == "__main__":
     while True:
 
         f = Food()
-        print("1: to order food\n")
+        print("1: to order food \n")
         print("2: to see menu\n")
         i = int(input())
         if i == 1:
