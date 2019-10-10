@@ -56,7 +56,7 @@ class Food:
                     self.orders.append({d: vegg[int(e) - 1]})
                 print(self.orders)
                 print("\nThank you for ordering our food\n")
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n9:Payments\n"))
+            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
             if l == 2:
                 my_orders_veg()
             if l == 3:
@@ -65,6 +65,8 @@ class Food:
                 drinkss()
             if l == 9:
                 self.payments()
+            if l == 8:
+                self.menu()
 
         def my_orders():
             for j in range(len(type)):
@@ -101,7 +103,7 @@ class Food:
                 print(self.orders)
                 print("\nThank you for ordering our food\n")
 
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n9:Payments\n"))
+            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
             if l == 2:
                 my_orders_veg()
             if l == 3:
@@ -110,6 +112,8 @@ class Food:
                 drinkss()
             if l == 9:
                 self.payments()
+            if l == 8:
+                self.menu()
 
         def drinkss():
             for i in range(len(drinks)):
@@ -122,7 +126,7 @@ class Food:
             print(self.orders)
             print("\nThank you for ordering our Drinks\n")
             # l = input("Enter s to switch to veg \nEnter nv to jump to non veg \nand n to continue ordering from drinks \nIf done ordering press p to go to payments ")
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n9:Payments\n"))
+            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
             if l == 2:
                 my_orders_veg()
             if l == 3:
@@ -131,7 +135,8 @@ class Food:
                 drinkss()
             if l == 9:
                 self.payments()
-
+            if l == 8:
+                self.menu()
         if p == 1:
             drinkss()
         if p == 2:
@@ -167,22 +172,38 @@ class Food:
                     if n[0] == k:
                         sas = sas + j * int(n[1])
             print(f"You have to pay ${sas} amount.\nThankyou for coming to our restaurent\n___PLEASE VISIT AGIAN__!")
-
-
+    def menu(self):
+        print("____Vegetatrian _____:")
+        print("Indian")
+        print(["rice", "roti", "paneer"])
+        print("\nFrench")
+        print(["lardon", "gourera", "Jambon persillé"])
+        print("\nGerman")
+        print(["Kartoffelkloesse", "Sauerkraut", "german paneer"])
+        print("\n____Non Vegetarian____:")
+        print("\nIndian")
+        print(["chiken tikka", "mutton", "kabab"])
+        print("\nFrench")
+        print(["Coq au vin", "Bœuf bourguignon", "Jambon persillé"])
+        print("\nGerman")
+        print(["Sauerbraten", "Bratwurst", "Schweinshaxe"])
+        print("\n___Drinks___:")
+        print(["Mojiata", "Martini", "Gin Rickey"])
+        l = input("\nEnter 'o' to go to orders:\n")
+        Food()
 
 if __name__ == "__main__":
 
     while True:
-
         f = Food()
-        print("1: to order food \n")
+        print("1: to order food ")
         print("2: to see menu\n")
         i = int(input())
         if i == 1:
             l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n"))
             f.order(l)
         if i == 2:
-            f.payments()
+            f.menu()
 
         q = input("'q' to quit or any key to continue")
         if q == "q":
