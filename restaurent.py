@@ -3,7 +3,6 @@ class Food:
     def __init__(self):
         self.name = "Faraz Khan"
         self.orders = []
-        self.payments()
 
     def order(self, p):
 
@@ -56,17 +55,18 @@ class Food:
                     self.orders.append({d: vegg[int(e) - 1]})
                 print(self.orders)
                 print("\nThank you for ordering our food\n")
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
-            if l == 2:
+            l = int(input("Do you want \n1:to continue ordering\n2:Remove order from list\n3:Done Ordering(Payments)\n"))
+            try:
+                if l == 2:
+                    self.removes()
+                if l == 3:
+                    self.payments()
+                if l == 1:
+                    n = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n4:Menu Card \n"))
+                    self.order(n)
+            except:
+                print("Invalid Input")
                 my_orders_veg()
-            if l == 3:
-                my_orders()
-            if l == 1:
-                drinkss()
-            if l == 9:
-                self.payments()
-            if l == 8:
-                self.menu()
 
         def my_orders():
             for j in range(len(type)):
@@ -103,17 +103,18 @@ class Food:
                 print(self.orders)
                 print("\nThank you for ordering our food\n")
 
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
-            if l == 2:
-                my_orders_veg()
-            if l == 3:
+            l = int(input("Do you want \n1:to continue ordering\n2:Remove order from list\n3:Done Ordering(Payments)\n"))
+            try:
+                if l == 2:
+                    self.removes()
+                if l == 3:
+                    self.payments()
+                if l == 1:
+                    n = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n4:Menu Card \n"))
+                    self.order(n)
+            except:
+                print("Invalid input")
                 my_orders()
-            if l == 1:
-                drinkss()
-            if l == 9:
-                self.payments()
-            if l == 8:
-                self.menu()
 
         def drinkss():
             for i in range(len(drinks)):
@@ -126,23 +127,29 @@ class Food:
             print(self.orders)
             print("\nThank you for ordering our Drinks\n")
             # l = input("Enter s to switch to veg \nEnter nv to jump to non veg \nand n to continue ordering from drinks \nIf done ordering press p to go to payments ")
-            l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n8:Menu Card\n9:Payments\n"))
-            if l == 2:
-                my_orders_veg()
-            if l == 3:
-                my_orders()
-            if l == 1:
+            l = int(input("Do you want \n1:to continue ordering\n2:Remove order from list\n3:Done Ordering(Payments)\n"))
+            try:
+                if l == 2:
+                    self.removes()
+                if l == 3:
+                    self.payments()
+                if l == 1:
+                    n = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n4:Menu Card \n"))
+                    self.order(n)
+            except:
+                print("Invalid input")
                 drinkss()
-            if l == 9:
-                self.payments()
-            if l == 8:
+        try:
+            if p == 1:
+                drinkss()
+            if p == 2:
+                my_orders_veg()
+            if p == 3:
+                my_orders()
+            if p ==4:
                 self.menu()
-        if p == 1:
-            drinkss()
-        if p == 2:
-            my_orders_veg()
-        if p == 3:
-            my_orders()
+        except:
+            print("Invalid Input ")
 
     # if food not in self.list:
     #     print("sorry the food is not available please try another thing:")
@@ -171,9 +178,10 @@ class Food:
                     n = m.split("=")
                     if n[0] == k:
                         sas = sas + j * int(n[1])
-            print(f"You have to pay ${sas} amount.\nThankyou for coming to our restaurent\n___PLEASE VISIT AGIAN__!")
+        print(f"You have to pay ${sas} amount.\nThank you for coming to our restaurent\n___PLEASE VISIT AGIAN__!")
+
     def menu(self):
-        print("____Vegetatrian _____:")
+        print("____Vegetarian _____:")
         print("Indian")
         print(["rice", "roti", "paneer"])
         print("\nFrench")
@@ -189,8 +197,24 @@ class Food:
         print(["Sauerbraten", "Bratwurst", "Schweinshaxe"])
         print("\n___Drinks___:")
         print(["Mojiata", "Martini", "Gin Rickey"])
-        l = input("\nEnter 'o' to go to orders:\n")
-        Food()
+        l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n"))
+        self.order(l)
+
+    def removes(self):
+        print(self.orders)
+        l = int(input("What element you want to remove:"))
+        self.orders.pop(l)
+        print(self.orders)
+        n = int(input("Enter \n1:To go to ordering\n2:To do payments "))
+        try:
+            if n == 1:
+                l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n"))
+                self.order(l)
+            if n ==2:
+                self.payments()
+        except:
+            print("Invalid input")
+            self.removes()
 
 if __name__ == "__main__":
 
@@ -198,14 +222,17 @@ if __name__ == "__main__":
         f = Food()
         print("1: to order food ")
         print("2: to see menu\n")
+        # print("3: to see orders\n")
         i = int(input())
         if i == 1:
             l = int(input("Do you want \n1:Drinks\n2:Veg\n3:Non Veg\n"))
             f.order(l)
         if i == 2:
             f.menu()
+        if i == 3:
+            f.removes()
 
-        q = input("'q' to quit or any key to continue")
+        q = input("'q' to quit or any key to ordering ")
         if q == "q":
             quit()
         else:
