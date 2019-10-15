@@ -151,11 +151,7 @@ class Food:
         except:
             print("Invalid Input ")
 
-    # if food not in self.list:
-    #     print("sorry the food is not available please try another thing:")
-    # else:
-    #     self.orders.update({quantity : food})
-    #     print("your order is done")
+  
     def payments(self):
         money_list = [
             "rice=5", "roti=10", "paneer=15",
