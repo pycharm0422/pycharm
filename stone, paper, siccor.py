@@ -71,14 +71,14 @@ elif l == 2:
             if r == 1 and i == 1:
                 print("draw")
             if r == 1 and i == 2:
-                p1 = p1 + 1
-                print("player1 got 1 point")
-            if r == 1 and i == 3:
                 p2 = p2 + 1
-                print("Player2 got 1 point")
-            if r == 2 and i == 1:
+                print("player2 got 1 point")
+            if r == 1 and i == 3:
                 p1 = p1 + 1
-                print("player1 got 1 point")
+                print("Player1 got 1 point")
+            if r == 2 and i == 1:
+                p2 = p2 + 1
+                print("player2 got 1 point")
             if r == 2 and i == 2:
                 print("draw")
             if r == 2 and i == 3:
@@ -88,8 +88,8 @@ elif l == 2:
                 p1 = p1 + 1
                 print("player1 got 1 point")
             if r == 3 and i == 2:
-                p2 = p2 + 1
-                print("Player2 got 1 point")
+                p1 = p1 + 1
+                print("Player1 got 1 point")
             if r == 3 and i == 3:
                 print("draw")
 
