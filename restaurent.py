@@ -231,6 +231,4 @@ if __name__ == "__main__":
         q = input("'q' to quit or any key to ordering ")
         if q == "q":
             quit()
-        else:
-            continue
-        print("faraz")
+      
