@@ -15,6 +15,3 @@
 # # news = arr + arr1
 # # print(news)
 
-arr1 = ["noodles", "shushi", "chuchi"]
-for i in range(1, len(arr1)):
-    print(f"{i}: {arr1[i]}")
